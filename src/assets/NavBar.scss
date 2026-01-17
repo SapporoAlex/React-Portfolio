@@ -1,0 +1,99 @@
+@use 'variables';
+@use 'states' as *;
+
+.navbar {
+  position: sticky;
+  top: 1%;
+  left: 5%;
+  background: variables.$color-secondary;
+  border-radius: 20px;
+  border: 1px solid variables.$color-accent-border;
+  z-index: 999;
+  width: 90%;
+  box-shadow: 0 2px 5px variables.$color-accent-border;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    .nav-right {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: variables.$color-text;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+
+    .bar {
+      height: 3px;
+      width: 100%;
+      background: variables.$color-text;
+      transition: 0.3s;
+
+      &.open:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+      }
+      &.open:nth-child(2) {
+        opacity: 0;
+      }
+      &.open:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 80px;
+    right: -40%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: variables.$color-secondary;
+    box-shadow: 0 5px 15px variables.$color-accent-border;
+    border-radius: 20px;
+    border: 1px solid variables.$color-accent-border;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 998;
+    a {
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: variables.$color-text;
+      font-weight: 500;
+    }
+  }
+  .mobile-menu.s-right-in {
+    transform: translateX(0);
+    right: 5%;
+  }
+
+}
