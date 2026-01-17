@@ -17,7 +17,7 @@ const LangSwitch: React.FC = () => {
       >
         日本語
       </button>
-      <span>/</span>
+      <span>|</span>
       <button
         className={i18n.language === 'en' ? 'active' : ''}
         onClick={() => changeLang('en')}
