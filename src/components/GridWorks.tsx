@@ -8,6 +8,7 @@ const GridWorks: React.FC = () => {
     const {t} = useTranslation();
     return (
         <section id="works" className="works-section">
+            <div className="main-container">
             <h2>{t('works.title')}</h2>
             <div className="grid-works">
             {worksData.map((work: any) => (
@@ -21,6 +22,7 @@ const GridWorks: React.FC = () => {
                 tools={work.tools}
             />
             ))}
+            </div>
             </div>
         </section>
         );

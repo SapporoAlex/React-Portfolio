@@ -1,6 +1,8 @@
 import './assets/Reset.scss';
 import './assets/_variables.scss';
+import './assets/_utilities.scss';
 import './assets/NavBar.scss';
+import './assets/Lottie.scss';
 import './App.css';
 import React from 'react';
 import Navbar from './components/Navbar';
@@ -16,10 +18,11 @@ const App: React.FC = () => {
     <div className="App">
       <Navbar/>
       <main>
-        <KV />
-        <GridTools />
-        <GridWorks />
-        <Contact />
+
+          <KV />
+          <GridTools />
+          <GridWorks />
+          <Contact />
 
       </main>
     </div>

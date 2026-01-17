@@ -1,0 +1,39 @@
+#lottie_opening {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh !important;
+    right: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+.lottie_charade {
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1001;
+    height: 25%;
+    width: 30%;
+    background: #000;
+    animation: bgColorChange 1.6s ease-in-out forwards;
+}
+
+@keyframes bgColorChange {
+    0% {
+        background-color: #000;
+    }
+    65% {
+        background-color: #000;
+    }
+    82% {
+        background-color: #013333;
+    }
+    85% {
+        background-color: #012b2b;
+    }
+    100% {
+        background-color: #000620;
+    }
+}

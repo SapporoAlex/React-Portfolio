@@ -25,55 +25,54 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="navbar">
-      <div className="header-inner">
-        <div className="nav-left">
-          <h1 className="header-logo">Logo</h1>
-        </div>
+    <div className="navbar-container">
+      <header className="navbar">
+        <div className="header-inner">
+          <div className="nav-left">
+            <img className="nav-logo" src="favicon.svg" />
+          </div>
 
-        <div className="nav-right">
-          <LangSwitch />
+          <div className="nav-right">
 
-          {/* Desktop links */}
-          <nav className="nav-links">
-            <a href="#top">{t('header.top')}</a>
-            <a href="#tools">{t('header.tools')}</a>
-            <a href="#works">{t('header.works')}</a>
-            <a href="#contact">{t('header.contact')}</a>
-          </nav>
 
-          {/* Hamburger for mobile/tablet */}
-          <div  ref={burgerRef}
-                className="hamburger" 
-                onClick={() => {
-            if (!menuOpen) {setMenuOpen(true)
-            } else {
-              setMenuOpen(false)}
-            }}>
-            <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-            <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-            <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+            {/* Desktop links */}
+            <nav className="nav-links">
+              <a href="#tools">{t('header.tools')}</a>
+              <a href="#works">{t('header.works')}</a>
+              <a href="#contact">{t('header.contact')}</a>
+            </nav>
+                      <LangSwitch />
+
+            {/* Hamburger for mobile/tablet */}
+            <div  ref={burgerRef}
+                  className="hamburger" 
+                  onClick={() => {
+              if (!menuOpen) {setMenuOpen(true)
+              } else {
+                setMenuOpen(false)}
+              }}>
+              <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+              <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+              <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+            </div>
           </div>
         </div>
-      </div>
-          {/* Mobile menu */}
-          {/* {menuOpen && ( */}
-          <div ref={menuRef} className={`mobile-menu ${menuOpen ? 's-right-in' : ''}`}>
-            <a href="#top" onClick={() => setMenuOpen(false)}>
-              {t('header.top')}
-            </a>
-            <a href="#tools" onClick={() => setMenuOpen(false)}>
-              {t('header.tools')}
-            </a>
-            <a href="#works" onClick={() => setMenuOpen(false)}>
-              {t('header.works')}
-            </a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
-              {t('header.contact')}
-            </a>
-          </div>
-          {/* )} */}
-    </header>
+            {/* Mobile menu */}
+            {/* {menuOpen && ( */}
+            <div ref={menuRef} className={`mobile-menu ${menuOpen ? 's-right-in' : ''}`}>
+              <a href="#tools" onClick={() => setMenuOpen(false)}>
+                {t('header.tools')}
+              </a>
+              <a href="#works" onClick={() => setMenuOpen(false)}>
+                {t('header.works')}
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
+                {t('header.contact')}
+              </a>
+            </div>
+            {/* )} */}
+      </header>
+    </div>
   );
 };
 

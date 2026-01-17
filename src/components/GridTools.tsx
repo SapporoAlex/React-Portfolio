@@ -8,11 +8,13 @@ const GridTools: React.FC = () => {
     const {t} = useTranslation();
     return (
         <section id="tools" className="tools-section">
+                <div className="main-container">
             <h2>{t('tools.title')}</h2>
             <div className="grid-tools">
             {toolsData.map((tool: any) => (
               <ToolCard key={tool.id} img={tool.img} alt={tool.alt} />
             ))}
+            </div>
             </div>
         </section>
         );

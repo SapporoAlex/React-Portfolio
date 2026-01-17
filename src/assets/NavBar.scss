@@ -1,22 +1,51 @@
 @use 'variables';
 @use 'states' as *;
 
-.navbar {
+.navbar-container {
   position: sticky;
   top: 1%;
-  left: 5%;
+  left: 0%;
+  z-index: 999;
+  width: 100%;
+  padding-inline: 20px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
   background: variables.$color-secondary;
   border-radius: 20px;
   border: 1px solid variables.$color-accent-border;
-  z-index: 999;
-  width: 90%;
+  max-width: 1200px;
+  width: 100%;
   box-shadow: 0 2px 5px variables.$color-accent-border;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-inline: 20px;
+  padding: 10px;
 
   .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 1rem;
+    width: 100%;
+    padding: 0rem 0px;
+    .nav-left {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      .nav-logo {
+        display: flex;
+        height:60px;
+        width: auto;
+      }
+    }
     .nav-right {
       display: flex;
       flex-direction: row;
@@ -76,7 +105,7 @@
     right: -40%;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
+    padding-right: 1rem;
     background-color: variables.$color-secondary;
     box-shadow: 0 5px 15px variables.$color-accent-border;
     border-radius: 20px;
@@ -84,6 +113,8 @@
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 998;
+    width: 150px;
+    text-align: right;
     a {
       padding: 0.5rem 0;
       text-decoration: none;
@@ -93,6 +124,7 @@
   }
   .mobile-menu.s-right-in {
     transform: translateX(0);
+    top: 100px;
     right: 5%;
   }
 
